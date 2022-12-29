@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+	<META name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<STYLE>
+		@font-face {
+			font-family: "montserrat";
+			src: url("MontserratAlternates-Light.otf");
+		}
+		BODY{
+			background-image: url(garland.png);
+			background-size: 100%;
+			background-repeat-y: no-repeat;
+			background-color: #381C1C;
+			color: white;
+			text-align: center;
+			font-family: "montserrat";
+			text-shadow: 0 0px 8px black;
+			font-size: 20px;
+		}
+		.btn{
+			max-width: 10em;
+			margin: 16px;
+		}
+		.anim{
+			transition: opacity 1s ease;
+			opacity: 0;
+		}
+	</STYLE>
+	<SCRIPT>
+		function OnLoad(){
+			const els = document.getElementsByClassName("anim");
+			console.log(els);
+			const elsArr = [].slice.call(els);
+			console.log(elsArr);
+			for(var i=0; i<elsArr.length; ++i){
+				let cn = i;
+				setTimeout(function(){
+					console.log(elsArr[cn], cn);
+					elsArr[cn].style.opacity = 1;
+				}, i*100);
+			}
+		}
+	</SCRIPT>
+</HEAD>
+<BODY onload=OnLoad()>
+	<H1 style="margin-top: 25%;" class=anim>Бажаю файних свят і чудового настрою!</H1>
+	<HR>
+	<H2 class=anim>Твори і сяй! А на незгоди уваги не звертай!</H2>
+	<P class=anim>Залишайся такою ж неймовірно творчою особистістю і даруй <U>нашому</U> світу свій дуже цікавий <U>внутрішній</U> світ! Нехай всі бажання здійсняться, буде щастя і мир!</P>
+	<HR>
+	<P class=anim>Знизу декілька посилань на ноти в різних форматах. MuseScore (.mscz) файл можна імпортувати в програму MuseScore версії 4.0 або більше. MusicXML (.mxl) можна імпортувати в будь-який редактор нот.</P>
+	<DIV class=anim>
+		<A href="./Prelude.pdf" download><IMG class=btn src="./pdf.png"></A>
+		<A href="./Prelude.mscz" download><IMG class=btn src="./mscz.png"></A>
+		<A href="./Prelude.mxl" download><IMG class=btn src="./mxl.png"></A>
+	</DIV>
+</BODY>
+</HTML>
